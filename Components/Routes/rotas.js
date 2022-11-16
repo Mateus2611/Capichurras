@@ -1,23 +1,23 @@
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { NavigationContainer } from "@react-navigation/native";
 
-import Home from '../src/Home/Home';
-import MeusChurrascos from '../src/Churrascos/MeusChurras';
-import AppItem from '../src/Churrascos/AppItem';
-import Maps from '../src/Maps/index';
+import Calculadora from "../src/Calculadora/index";
+import Home from "../src/Home/Home";
+import Lista from "../src/LIsta/index"
+import MeusChurrascos from "../src/Churrascos/MeusChurras";
 
 const { Screen, Navigator } = createNativeStackNavigator();
 
 export default function StackRoutes() {
   return (
     <NavigationContainer>
-      <Navigator initialRouteName="Maps">
+      <Navigator initialRouteName="Calculadora">
         <Screen
           name="Home"
           component={Home}
           options={{
-            title: null,
-            headerTrasparent: true,
+            title: null, 
+            headerTrasparent: true, 
             headerShown: false,
           }}
         />
@@ -25,7 +25,7 @@ export default function StackRoutes() {
           name="MeusChurrascos"
           component={MeusChurrascos}
           options={{
-            title: 'Meus Churrascos',
+            title: "Meus Churrascos",
             headerStyle: {
               backgroundColor: '#611D12',
             },
@@ -38,11 +38,28 @@ export default function StackRoutes() {
             },
           }}
         />
-        <Screen
-          name="Maps"
-          component={Maps}
+        <Screen 
+          name="Lista"
+          component={Lista}
           options={{
-            title: 'Localizações',
+            title: "Lista do Churrasco",
+            headerStyle: {
+              backgroundColor: '#611D12',
+            },
+            headerTintColor: '#F6AA1C',
+            headerTitleStyle: {
+              fontWeight: 'bold',
+              textAlign: 'center',
+              color: '#F6AA1C',
+              fontSize: 32,
+            },
+          }}
+        />
+        <Screen 
+          name="Calculadora"
+          component={Calculadora}
+          options={{
+            title: "Calcular Churrasco",
             headerStyle: {
               backgroundColor: '#611D12',
             },
