@@ -48,6 +48,7 @@ export default function Lista() {
 
         <Text style={styles.textGrande}>Valor Total:</Text>
         <Text style={styles.textGrande}>Rateio por pessoa:</Text>
+
         <View style={styles.buttonsContainer}>
           <TouchableOpacity style={styles.button_editar}>
             <Image
@@ -57,6 +58,7 @@ export default function Lista() {
           </TouchableOpacity>
         </View>
       </View>
+      
       <Text style={styles.footer}>Os valores são meramente sugestivos</Text>
     </ScrollView>
   );
@@ -76,7 +78,7 @@ const styles = StyleSheet.create({
     marginTop: 20,
     marginBottom: 10,
     width: 350,
-    height: 550,
+    height: 650,
     borderRadius: 20,
     alignSelf: 'center',
   },
@@ -85,10 +87,9 @@ const styles = StyleSheet.create({
     width: 35,
   },
   button_editar: {
-    display: 'flex',
-    position: 'absolute',
-    left: 120,
-    bottom: 10,
+    position: 'relative',
+    left: 140,
+    margin: 10
   },
   buttonsContainer: {
     alignSelf: 'center',

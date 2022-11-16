@@ -9,8 +9,10 @@ import {
   TouchableOpacity,
   TextInput,
 } from 'react-native';
+import { Checkbox } from 'react-native-paper';
 
 export default function Calculadora() {
+  const [checked, setChecked] = React.useState(false);
   const [text1, onChangeText1] = React.useState('');
   const [text2, onChangeText2] = React.useState('');
   const [text3, onChangeText3] = React.useState('');
@@ -71,35 +73,58 @@ export default function Calculadora() {
         />
       </View>
 
-      <View style={styles.checkbox_container1}>
+      <View style={styles.container1}>
         <Text style={styles.titulo_checkbox}>Carnes</Text>
         <Image
-                source={require('../../../assets/mula.png')}
-                style={styles.imagem_checkbox}
-              />
-        <Image
-                source={require('../../../assets/porco.png')}
-                style={styles.imagem_checkbox}
-              />
-        <Image
-                source={require('../../../assets/galinha.png')}
-                style={styles.imagem_checkbox}
-              />
+          source={require('../../../assets/mula.png')}
+          style={styles.imagem_checkbox}
+        />
+        <View style={styles.checkbox_container1}>
+          <Checkbox
+            status={checked ? 'checked' : 'unchecked'}
+            style={styles.checkbox}
+            onPress={() => {
+              setChecked(!checked);
+            }}
+          />
+          <Text style={styles.text_checkbox}>Picanha</Text>
+          
+          <Image
+            source={require('../../../assets/porco.png')}
+            style={styles.imagem_checkbox}
+          />
+          <Image
+            source={require('../../../assets/galinha.png')}
+            style={styles.imagem_checkbox}
+          />
+        </View>
       </View>
-
-      <View style={styles.checkbox_container2}>
+    
+      <View style={styles.container2}>
         <Text style={styles.titulo_checkbox}>Opções veganas</Text>
+        <Image
+          source={require('../../../assets/vegan.png')}
+          style={styles.imagem_checkbox}
+        />
       </View>
 
-      <View style={styles.checkbox_container3}>
+      <View style={styles.container3}>
         <Text style={styles.titulo_checkbox}>Bebidas</Text>
+        <Image
+          source={require('../../../assets/beer.png')}
+          style={styles.imagem_checkbox}
+        />
       </View>
 
-      <View style={styles.checkbox_container4}>
+      <View style={styles.container4}>
         <Text style={styles.titulo_checkbox}>Adicionais</Text>
+        <Image
+          source={require('../../../assets/restaurant.png')}
+          style={styles.imagem_checkbox}
+        />
       </View>
 
-      <View style={styles.checkbox_container5}>
+      <View style={styles.container5}>
         <Text style={styles.titulo_checkbox}>Local</Text>
         <TextInput
           style={styles.input_mapas}
@@ -151,7 +176,7 @@ const styles = StyleSheet.create({
     borderBottomWidth: 2,
     borderBottomColor: '#BC3908',
   },
-  checkbox_container1: {
+  container1: {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-around',
@@ -164,18 +189,18 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
   },
   titulo_checkbox: {
-    alignSelf:'center',
+    alignSelf: 'center',
     fontSize: 25,
     borderBottomWidth: 2,
-    padding:0,
-    margin:0,
+    padding: 0,
+    margin: 0,
   },
   imagem_checkbox: {
     height: 40,
     width: 40,
     marginLeft: 15,
   },
-  checkbox_container2: {
+  container2: {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-around',
@@ -187,7 +212,7 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     alignSelf: 'center',
   },
-  checkbox_container3: {
+  container3: {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-around',
@@ -199,7 +224,7 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     alignSelf: 'center',
   },
-  checkbox_container4: {
+  container4: {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-around',
@@ -211,7 +236,7 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     alignSelf: 'center',
   },
-  checkbox_container5: {
+  container5: {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-around',
@@ -246,9 +271,9 @@ const styles = StyleSheet.create({
     width: 250,
   },
   titulo_botao: {
-    alignSelf:'center',
+    alignSelf: 'center',
     marginTop: 15,
-    color: '#fff'
+    color: '#fff',
   },
   botao_stylec: {
     display: 'flex',
@@ -264,8 +289,15 @@ const styles = StyleSheet.create({
     width: 250,
   },
   titulo_botaoc: {
-    alignSelf:'center',
+    alignSelf: 'center',
     marginTop: 15,
-    color: '#F6AA1C'
+    color: '#F6AA1C',
+  },
+  checkbox_container1: {
+    flexDirection: "row",
+  },
+  text_checkbox: {
+    margin: 8,
   },
 });
+   
