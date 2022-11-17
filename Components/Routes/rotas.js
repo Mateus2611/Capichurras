@@ -11,7 +11,7 @@ const { Screen, Navigator } = createNativeStackNavigator();
 export default function StackRoutes() {
   return (
     <NavigationContainer>
-      <Navigator initialRouteName="Lista">
+      <Navigator initialRouteName="Calculadora">
         <Screen
           name="Home"
           component={Home}
